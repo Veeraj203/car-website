@@ -30,3 +30,5 @@ Built with **FastAPI**, **Jinja2**, and **Vanilla JavaScript/CSS**.
 ## Placeholders
 - **Images:** Unsplash image URLs are used as placeholders in `templates/index.html`. You can replace them by adding files to the `static/images/` folder and updating the `src` attributes.
 - **Music:** A placeholder is expected at `static/music/cinematic.mp3`. You should add an mp3 file there to enable background music.
+
+# car-website
