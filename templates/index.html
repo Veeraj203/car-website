@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velocity | Luxury Cars Showroom</title>
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="{{ url_for('static', path='/style.css') }}">
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Netflix Style Intro Loader -->
+    <div id="loader" class="loader-container">
+        <div class="loader-logo">VELOCITY</div>
+    </div>
+
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <source src="{{ url_for('static', path='/music/cinematic.mp3') }}" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Floating Particles -->
+    <div id="particles-container"></div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="glass-nav">
+        <div class="nav-logo">VELOCITY</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#trending">Trending</a></li>
+            <li><a href="#monsters">Top Speed</a></li>
+            <li><a href="#upcoming">Upcoming</a></li>
+        </ul>
+        <div class="nav-controls">
+            <button id="music-btn" class="ctrl-btn" title="Play/Pause Music">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path id="play-icon" d="M8 5v14l11-7z" fill="currentColor"/>
+                    <path id="pause-icon" d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" fill="currentColor" style="display:none;"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero-section">
+        <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=2069&auto=format&fit=crop" alt="Hero Car" class="hero-img">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-content">
+            <h1 class="hero-title fade-in-up">DRIVE YOUR <span class="neon-red">PASSION</span></h1>
+            <p class="hero-subtitle fade-in-up delay-1">Experience the pinnacle of automotive engineering.</p>
+            <button id="explore-btn" class="explore-btn fade-in-up delay-2">
+                <span>ENTER SHOWROOM</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Showroom Container -->
+    <main id="showroom" class="hidden-content">
+        <!-- Trending Section -->
+        <section id="trending" class="car-section">
+            <h2 class="section-title">Trending Now</h2>
+            <div class="carousel-container">
+                <div class="card-track">
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1563720225384-9c0f679220fe?q=80&w=1000&auto=format&fit=crop" alt="Lamborghini">
+                        </div>
+                        <div class="card-info">
+                            <h3>Aventador SVJ</h3>
+                            <p>V12 naturally aspirated engine.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1503376710356-70ceea9f743c?q=80&w=1000&auto=format&fit=crop" alt="Porsche">
+                        </div>
+                        <div class="card-info">
+                            <h3>911 GT3 RS</h3>
+                            <p>Born in Flacht.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                     <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1617788138017-80ad40651399?q=80&w=1000&auto=format&fit=crop" alt="Tesla">
+                        </div>
+                        <div class="card-info">
+                            <h3>Model S Plaid</h3>
+                            <p>0-60 in 1.99s.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Speed Monsters -->
+        <section id="monsters" class="car-section">
+            <h2 class="section-title">Top Speed Monsters</h2>
+            <div class="carousel-container">
+                <div class="card-track">
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1614200187524-dc4b892acf16?q=80&w=1000&auto=format&fit=crop" alt="Bugatti">
+                        </div>
+                        <div class="card-info">
+                            <h3>Chiron Super Sport</h3>
+                            <p>Breaking the 300 mph barrier.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1627454819213-9a3d1dffbde9?q=80&w=1000&auto=format&fit=crop" alt="Koenigsegg">
+                        </div>
+                        <div class="card-info">
+                            <h3>Jesko Absolut</h3>
+                            <p>The ultimate top speed machine.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Upcoming Hypercars -->
+        <section id="upcoming" class="car-section">
+            <h2 class="section-title">Upcoming Hypercars</h2>
+            <div class="carousel-container">
+                <div class="card-track">
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1000&auto=format&fit=crop" alt="Ferrari">
+                        </div>
+                        <div class="card-info">
+                            <h3>Ferrari SF90 Stradale</h3>
+                            <p>V8 Hybrid Innovation.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                    <div class="car-card">
+                        <div class="card-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1614165936126-2ed18e471b3b?q=80&w=1000&auto=format&fit=crop" alt="McLaren">
+                        </div>
+                        <div class="card-info">
+                            <h3>McLaren P1</h3>
+                            <p>Hybrid Hypercar Legend.</p>
+                            <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommended For You -->
+        <section id="recommended" class="car-section">
+            <h2 class="section-title">Recommended For You</h2>
+            <div class="grid-container">
+                <div class="car-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?q=80&w=1000&auto=format&fit=crop" alt="Audi">
+                    </div>
+                    <div class="card-info">
+                        <h3>Audi R8 V10</h3>
+                        <p>Everyday supercar.</p>
+                        <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                    </div>
+                </div>
+                <!-- Add more grid items -->
+                <div class="car-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=1000&auto=format&fit=crop" alt="Ferrari">
+                    </div>
+                    <div class="card-info">
+                        <h3>Ferrari F8 Tributo</h3>
+                        <p>Italian masterpiece.</p>
+                        <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                    </div>
+                </div>
+                <div class="car-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1000&auto=format&fit=crop" alt="Ferrari">
+                    </div>
+                    <div class="card-info">
+                        <h3>Ferrari 488 Pista</h3>
+                        <p>Track ready.</p>
+                        <button class="btn-like" title="Like"><svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <h2 class="footer-logo">VELOCITY</h2>
+            <div class="social-links">
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+                <a href="#">YouTube</a>
+            </div>
+            <p>&copy; 2026 Velocity Motors. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JS Link -->
+    <script src="{{ url_for('static', path='/script.js') }}"></script>
+</body>
+</html>
